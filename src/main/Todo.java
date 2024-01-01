@@ -24,6 +24,6 @@ public class Todo {
 
     @Override
     public String toString() {
-        return "Todo: "+todo+ "\n"+"Completed "+isCompleted;
+        return "Todo: "+todo+ "\n"+"Completed: "+isCompleted;
     }
 }

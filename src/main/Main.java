@@ -55,18 +55,45 @@ public class Main {
     }
 
     static void viewTodos() {
-        for(Todo object: todoList){
+       /* for(Todo object: todoList){
             System.out.println(object);
+        }*/
+
+        for (int i = 0; i < todoList.size(); i++) {
+            System.out.println(i + ". " + todoList.get(i));
         }
+
+        ViewOptions();
     }
 
     ;
 
     static void deleteTodos() {
+
+        if(todoList.isEmpty()){
+            System.out.println("Add a todo before delete");
+            ViewOptions();
+            return;
+        }
+        System.out.println("Enter Index of todo to delete");
+
+        int indexToDelete = scanner.nextInt();
+
+
+        if (indexToDelete >= 0) {
+            if (indexToDelete < todoList.size()) {
+                todoList.remove(indexToDelete);
+                viewTodos();
+            } else {
+                System.out.println("Index is out of bound");
+            }
+            ;
+        } else {
+            System.out.println("index can not be less than zero");
+        }
+        ;
+        ViewOptions();
     }
 
     ;
-
-
-
-}
+};
